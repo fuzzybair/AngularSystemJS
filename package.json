@@ -1,0 +1,32 @@
+{
+  "name": "AngularSystemJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "5.2.3",
+    "@angular/compiler": "5.2.3",
+    "@angular/core": "5.2.3",
+    "@angular/platform-browser": "5.2.3",
+    "@angular/platform-browser-dynamic": "5.2.3",
+    "concurrently": "^3.4.0",
+    "core-js": "2.5.3",
+    "lite-server": "^2.2.0",
+    "rxjs": "5.5.6",
+    "systemjs": "0.19.29",
+    "zone.js": "0.8.20"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.53",
+    "jasmine-core": "^2.6.4",
+    "typescript": "2.8.1"
+  }
+}
