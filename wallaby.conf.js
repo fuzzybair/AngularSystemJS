@@ -36,6 +36,7 @@ module.exports = function (wallaby) {
 
     middleware: function (app, express) {
       app.use('/node_modules', express.static(require('path').join(__dirname, 'node_modules')));
+      app.use('/AngularSystemJS', express.static(require('path').join(__dirname, 'Content', 'AngularSystemJS')));
     },
 
     testFramework: 'jasmine@2.8.0',
