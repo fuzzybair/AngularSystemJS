@@ -27,6 +27,7 @@
   "devDependencies": {
     "@types/jasmine": "^2.5.53",
     "angular2-template-loader": "^0.6.0",
+    "babel-polyfill": "6.26.0",
     "jasmine-core": "^2.6.4",
     "typescript": "2.8.1",
     "awesome-typescript-loader": "^3.0.4",
@@ -35,6 +36,17 @@
     "html-loader": "^0.4.3",
     "null-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-htmlfile-reporter": "^0.3.5",
+    "karma-intl-shim": "^1.0.3",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-typescript": "3.0.12",
+    "typings": "^2.1.0"
   }
 }

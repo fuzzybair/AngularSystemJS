@@ -1,4 +1,5 @@
-import { async, fakeAsync, tick, TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { AngularSystemJSComponent } from './angular-systemjs.component';
 
@@ -26,10 +27,8 @@ describe('AngularSystemJSComponent', () => {
 
   it('should have greeting rendered in an h1', () => {
     let fixture = TestBed.createComponent(AngularSystemJSComponent);
-    let component = fixture.componentInstance;
     fixture.detectChanges();
-    let element = fixture.debugElement.nativeElement;
-
-    expect(element.querySelector('h1').testContent).toContain("Hello, Angular");
+    const element = fixture.debugElement.query(By.css('h1')).nativeElement;
+    expect(element.textContent).toContain("Hello, Angular");
   });
 });

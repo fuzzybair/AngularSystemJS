@@ -1,5 +1,7 @@
 node_modules/*
 dist/*
+coverage/*
+TESTS.xml
 
 # Generated JS and source map
 /**/*.component.js
