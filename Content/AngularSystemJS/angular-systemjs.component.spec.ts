@@ -15,12 +15,21 @@ describe('AngularSystemJSComponent', () => {
   it('should create', () => {
     let fixture = TestBed.createComponent(AngularSystemJSComponent);
     let component = fixture.componentInstance;
-    expect(component).toBeTruthy(); 
+    expect(component).toBeTruthy();
   });
-  
+
   it('should have greeting Hello Angular', () => {
     let fixture = TestBed.createComponent(AngularSystemJSComponent);
     let component = fixture.componentInstance;
-    expect(component.greeting()).toEqual("Hello, Angular"); 
+    expect(component.greeting()).toEqual("Hello, Angular");
+  });
+
+  it('should have greeting rendered in an h1', () => {
+    let fixture = TestBed.createComponent(AngularSystemJSComponent);
+    let component = fixture.componentInstance;
+    fixture.detectChanges();
+    let element = fixture.debugElement.nativeElement;
+
+    expect(element.querySelector('h1').testContent).toContain("Hello, Angular");
   });
 });

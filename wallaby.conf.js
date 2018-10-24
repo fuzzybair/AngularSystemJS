@@ -3,10 +3,11 @@
 // Note: Wallaby is not open source and costs money
 
 module.exports = function (wallaby) {
-
+  
   var compilerOptions = require('./tsconfig.json').compilerOptions;
-
+  
   return {
+    reportUnhandledPromises: false,
     files: [
       {pattern: 'node_modules/systemjs/dist/system.src.js', instrument: false},
       {pattern: 'node_modules/systemjs/dist/system-polyfills.js', instrument: false},

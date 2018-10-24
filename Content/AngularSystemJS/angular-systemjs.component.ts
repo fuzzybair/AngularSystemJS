@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-angular-systemjs',
-  template: '<h1>{{greeting()}}</h1>'
+  templateUrl: './AngularSystemJS/angular-systemjs.component.html',
+  styleUrls: ['./AngularSystemJS/angular-systemjs.component.css'],
 })
 export class AngularSystemJSComponent {
   name = 'Angular';
-  greeting(){
+  greeting() {
     return 'Hello, ' + this.name;
   }
 }
