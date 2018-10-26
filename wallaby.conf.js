@@ -3,35 +3,35 @@
 // Note: Wallaby is not open source and costs money
 
 module.exports = function (wallaby) {
-  
+
   var compilerOptions = require('./tsconfig.json').compilerOptions;
-  
+
   return {
     reportUnhandledPromises: false,
     files: [
-      {pattern: 'node_modules/systemjs/dist/system.src.js', instrument: false},
-      {pattern: 'node_modules/systemjs/dist/system-polyfills.js', instrument: false},
+      { pattern: 'node_modules/systemjs/dist/system.src.js', instrument: false },
+      { pattern: 'node_modules/systemjs/dist/system-polyfills.js', instrument: false },
 
       // Polyfills
-      {pattern: 'node_modules/core-js/client/shim.min.js', instrument: false},
+      { pattern: 'node_modules/core-js/client/shim.min.js', instrument: false },
 
-      {pattern: 'node_modules/zone.js/dist/zone.js', instrument: false},
-      {pattern: 'node_modules/zone.js/dist/long-stack-trace-zone.js', instrument: false},
-      {pattern: 'node_modules/zone.js/dist/proxy.js', instrument: false},
-      {pattern: 'node_modules/zone.js/dist/sync-test.js', instrument: false},
-      {pattern: 'node_modules/zone.js/dist/jasmine-patch.js', instrument: false},
-      {pattern: 'node_modules/zone.js/dist/async-test.js', instrument: false},
-      {pattern: 'node_modules/zone.js/dist/fake-async-test.js', instrument: false},
+      { pattern: 'node_modules/zone.js/dist/zone.js', instrument: false },
+      { pattern: 'node_modules/zone.js/dist/long-stack-trace-zone.js', instrument: false },
+      { pattern: 'node_modules/zone.js/dist/proxy.js', instrument: false },
+      { pattern: 'node_modules/zone.js/dist/sync-test.js', instrument: false },
+      { pattern: 'node_modules/zone.js/dist/jasmine-patch.js', instrument: false },
+      { pattern: 'node_modules/zone.js/dist/async-test.js', instrument: false },
+      { pattern: 'node_modules/zone.js/dist/fake-async-test.js', instrument: false },
 
-      {pattern: 'systemjs.config.js', instrument: false},
-      
+      { pattern: 'systemjs.config.js', instrument: false },
 
-      {pattern: 'Content/**/*+(ts|html|css)', load: false},
-      {pattern: 'Content/**/*.spec.ts', ignore: true}
+
+      { pattern: 'Content/**/*+(ts|html|css)', load: false },
+      { pattern: 'Content/**/*.spec.ts', ignore: true }
     ],
 
     tests: [
-      {pattern: 'Content/**/*.spec.ts', load: false}
+      { pattern: 'Content/**/*.spec.ts', load: false }
     ],
 
     middleware: function (app, express) {
@@ -47,6 +47,12 @@ module.exports = function (wallaby) {
 
     compilers: {
       '**/*.ts': wallaby.compilers.typeScript(compilerOptions)
+    },
+
+    // set tests to run sequentially due to dependacies between tests
+    workers: {
+      initial: 1,
+      regular: 1
     },
 
     debug: true,
@@ -70,6 +76,7 @@ module.exports = function (wallaby) {
           '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
           '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
         },
+
       });
 
       var promises = [
