@@ -35,6 +35,13 @@ module.exports = function (wallaby) {
     ],
 
     middleware: function (app, express) {
+      ['common', 'mock-declaration', 'mock-directive', 'mock-module', 'mock-pipe',
+        ['common', 'lib/common/index'], ['common/reflect', 'lib/common/reflect'], ['common/jit-reflector', 'lib/common/jit-reflector'],
+        ['lib/mock-of.decorator', 'lib/common/mock-of.decorator'], ['mock-of.decorator', 'lib/common/mock-of.decorator'], ['lib/mock-component', 'lib/mock-component/mock-component']]
+        .forEach(v => typeof v === 'string'
+          ? app.use(`/node_modules/ng-mocks/dist/lib/${v}.js`, express.static(require('path').join(__dirname, `node_modules/ng-mocks/dist/lib/${v}/index.js`)))
+          : app.use(`/node_modules/ng-mocks/dist/${v[0]}.js`, express.static(require('path').join(__dirname, `node_modules/ng-mocks/dist/${v[1]}.js`))));
+
       app.use('/node_modules', express.static(require('path').join(__dirname, 'node_modules')));
       app.use('/AngularSystemJS', express.static(require('path').join(__dirname, 'Content', 'AngularSystemJS')));
     },
