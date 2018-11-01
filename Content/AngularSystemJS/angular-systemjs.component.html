@@ -1,1 +1,16 @@
 <h1>{{greeting()}}</h1>
+<div class="panel panel-primary">
+  <div class="card">
+    <p-dropdown id="data-items"
+                [options]="itemList"
+                name="selected-item"
+                [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="selectedItemId"
+                placeholder="Select an Item"
+                optionLabel="name"
+                styleClass="width-100"
+                (onChange)="getDetails()"
+                dataKey="id">
+    </p-dropdown>
+  </div>
+</div>

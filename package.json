@@ -52,6 +52,8 @@
     "karma-junit-reporter": "^1.2.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-typescript": "3.0.12",
-    "typings": "^2.1.0"
+    "typings": "^2.1.0",
+    "ng-mocks": "^7.0.1",
+    "primeng": "5.2.0"
   }
 }

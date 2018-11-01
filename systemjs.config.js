@@ -18,6 +18,7 @@ System.config({
     '@angular/router': 'npm:@angular/router/bundles/router.umd.min.js',
     'core-js': 'npm:core-js',
     'zone.js': 'npm:zone.js',
+    'primeng': 'npm:primeng',
     'rxjs': 'npm:rxjs',
     'tslib': 'npm:tslib'
   },

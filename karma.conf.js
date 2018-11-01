@@ -78,8 +78,8 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome', 'PhantomJS'],
+    autoWatch: false,
+    browsers: ['ChromeHeadless'],
     customLaunchers: {
       Chrome_with_debugging: {
         base: 'Chrome',
@@ -87,7 +87,7 @@ module.exports = function (config) {
         debug: true
       }
     },
-    singleRun: false,
+    singleRun: true,
     browserNoActivityTimeOut: 60000,
   })
 }
